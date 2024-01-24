@@ -1,0 +1,40 @@
+.App {
+    font-family: "Ubuntu", sans-serif;
+     width: 100vw;
+     height: 100vh;   
+    /* display: flex; */
+    justify-content: center; 
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  
+  #light {
+    background-color: #ffffff;
+  }
+  
+  #dark {
+    background-color: #000000;
+  }
+  
+  /* giving style of the switch */
+  .switch {
+    display: relative;
+    flex-direction: row;
+    justify-content: center;
+     align-items: center; 
+   
+  }
+  
+  .switch label {
+
+  }
+  
+  #light .switch label {
+    color: black;
+  }
+  
+  #dark .switch label {
+    color: white;
+  }
+
+  
