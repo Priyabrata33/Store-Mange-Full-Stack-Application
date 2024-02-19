@@ -7,6 +7,7 @@ import com.app.demo.repository.StoreRepo;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,34 +18,21 @@ public class StoreService {
     @Autowired
     public StoreRepo storeRepository;
 
-    public void insertStore(Store store){
+    public void insertStore(@RequestBody Store store){
+       System.out.println("StoreService");
         storeRepository.save(store);
 
     }
 
-    public List<String> getAllStoreName(){
-        List<String> sName  = new ArrayList<>();
-        for(Store st:storeRepository.findAll()) {
-            sName.add(st.getsName());
-        }
-        return sName;
-    }
-    public List<StoreNameAdd> getAddrsAndName(){
-//        List<List<String>> allAddName = new ArrayList<>();
-//        for(Store st: storeRepository.findAll()){
-//            List<String> addName = new ArrayList<>();
-//            addName.add(st.getsName());
-//            addName.add(st.getsAddrs());
-//            allAddName.add(addName);
-//        }
-//        ObjectMapper objectmap = new ObjectMapper();
-//
-//        return allAddName;
 
+    public List<Store> getStore(){
         List<Store> stores = storeRepository.findAll();
-        return stores.stream().map(e -> {
-            return new StoreNameAdd(e.getsName(),e.getsAddrs());
-        }).toList();
+
+  // getting all the store name and the
+ //       return stores.stream().map(e -> {
+//            return new StoreNameAdd(e.getsName(),e.getsAddrs());
+//        }).toList();
+        return stores;
     }
 
     /*

@@ -14,6 +14,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/stores")
+@CrossOrigin(origins = "*")
 public class StoreController {
 
     public StoreService storeService;
@@ -32,20 +33,18 @@ public class StoreController {
         return st;
     }
 
+
     @PostMapping("/saveStores")
     public Store saveStore(@RequestBody Store store){
+        System.out.println(store.getsAddrs()+" "+store.getsName());
+
         storeService.insertStore(store);
         return store;
     }
 
-    @GetMapping(path="/getAllStoreName", produces="application/json")
-    public List<String> getAllStoreName(){
-        return storeService.getAllStoreName();
-    }
-
-    @GetMapping(path="/getAllAddressAndName", produces="application/json")
-    public List<StoreNameAdd> getAllAddressAndName()
+    @GetMapping(path="/getAllStore", produces="application/json")
+    public List<Store> getAllAddressAndName()
     {
-        return storeService.getAddrsAndName();
+        return storeService.getStore();
     }
 }
