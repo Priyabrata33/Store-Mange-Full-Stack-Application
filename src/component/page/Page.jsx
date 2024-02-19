@@ -23,7 +23,7 @@ function SaveAndRetrive(){
 function Page(){
     const [sum, setSum] = useState(0);
     const calculateSum = () => {
-      fetch('http://localhost:4000/fullstack/sumOfAll', {
+      fetch('https://localhost:4000/fullstack/sumOfAll', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'

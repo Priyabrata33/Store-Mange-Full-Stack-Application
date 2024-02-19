@@ -8,12 +8,12 @@ function Home() {
 
     const storeObj = { 
         name: "Store",
-        imageUrl: "src/component/cards/images/6859183.jpg"
-      };
+        imageUrl: "https://img.freepik.com/free-vector/shop-with-open-sign_23-2148554817.jpg?size=626&ext=jpg"
+    };
   
       const deliverObj = {
         name: "Delivery",
-        imageUrl: "src/component/cards/images/6180696.jpg"
+        imageUrl: "https://motionarray.imgix.net/1908572-6bJLCsGP98-high_0009.jpg?w=660&q=60&fit=max&auto=format"
       };
   
   return (

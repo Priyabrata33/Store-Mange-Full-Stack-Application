@@ -11,7 +11,7 @@ export default function Cards(props) {
 
     <div >
 
-      <Card sx={{ maxWidth: 345 }} className='delivery'>
+      <Card sx={{ maxWidth: 300 , boxShadow: '0 4px 8px rgba(0, 0, 0, 4)'}} className='delivery'>
         <CardActionArea>
           <CardMedia
             component="img"

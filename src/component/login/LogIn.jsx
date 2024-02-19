@@ -15,7 +15,7 @@ import FormControl from '@mui/material/FormControl';
 import { useState } from 'react';
 import sha256 from 'crypto-js/sha256';
 import { Outlet } from 'react-router-dom';
-import './login.css';
+import './logIn.css';
 
 
 const style = {

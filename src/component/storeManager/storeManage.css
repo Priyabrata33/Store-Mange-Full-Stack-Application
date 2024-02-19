@@ -1,7 +1,25 @@
 .storeManage{
-    margin: 4em 1em 7em; /* Update the margins for desktop */
+    margin: 8em 7em; /* Update the margins for desktop */
+         /* Update the margins for desktop */
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
+    
+}
+
+@media (max-width: 1080px) {
+    .cards {
+        margin: 7em 5em; /*Update the margins for tablet */
+    }
+}
+
+@media (max-width: 800px) {
+    .cards {
+        height: 150;
+        width: 100;
+        margin: 7em ; /* Update the margins for mobile */
+        flex-direction: column;
+    
+    }
 }
