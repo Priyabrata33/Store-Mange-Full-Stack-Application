@@ -1,0 +1,40 @@
+version: '3.1'
+services:
+  db:
+    image: priyabrata03/store_database:0.1
+    restart: always
+    container_name: db
+    ports: 
+      - 5432:5432
+    environment:
+      POSRGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      POSTGRES_DB: student
+
+  backend:
+    image: priyabrata03/store_back_end:0.1
+    restart: always
+    build:
+      context: .
+    container_name: backend
+    depends_on:
+      - db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: password
+      SPRING_DATASOURCE_URL: jdbc:postgresql://192.168.0.112:5432/student
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: password
+      SPRING_JPA_HIBERNATE_DDL_AUTO: update
+    ports:
+       - 4000:4000
+
+  frontend:
+    image: priyabrata03/store_front_end:0.1
+    build:
+      context: . 
+    container_name: frontend
+    depends_on:
+      - backend
+    ports:
+      - 80:80
