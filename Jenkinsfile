@@ -19,7 +19,7 @@ pipeline {
     }
     stage('Push') {
       steps {
-        sh 'docker push priyabrata03/store_front_end '
+        sh 'docker push priyabrata03/store_front_end'
       }
     }
     stage('Deploy'){
