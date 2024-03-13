@@ -3,6 +3,7 @@ import StoreManageCard from './store card/StoreCards';
 import './storeManage.css'
 import AddButton from './AddButton.jsx';
 import AlertMessage from './AlertMessage.jsx';
+import { NavLink } from 'react-router-dom';
 
 function StoreManage() {
   const [stores, setStores] = useState([]);
@@ -48,7 +49,7 @@ useEffect(() => {
 const generateCards = (array) => {
   return array.map((stores, index) => {
     return <div key={index} className="card">
-      <StoreManageCard storeDetailObj = {stores}/>
+        <StoreManageCard storeDetailObj = {stores}/>
       </div>;
   });
 };
@@ -64,10 +65,10 @@ const generateCards = (array) => {
         </div>
       )}
       <div className='storeManage'>
-      
      {/* // Need to generate the cards in that way so that the Number of Card generate as per the number of store in the Store one */}
       {generateCards(stores)}
       </div>
+     
      <AddButton/>
    
      

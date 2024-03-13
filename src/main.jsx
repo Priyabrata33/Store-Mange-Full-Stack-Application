@@ -6,6 +6,7 @@ import {createBrowserRouter, RouterProvider } from 'react-router-dom'
 import StoreManage from './component/storeManager/StoreManage.jsx'
 import Home from './component/Home.jsx'
 import LogIn from './component/login/LogIn.jsx'
+import Stores from './component/storeManager/store card/Stores.jsx'
 
 const router = createBrowserRouter ([
   {
@@ -25,7 +26,13 @@ const router = createBrowserRouter ([
       },
       {
         path:'/storeMangement',
-        element: <StoreManage/>
+        element: <StoreManage/>,
+        children:[
+          {
+            path:'*',
+            element: <Stores/>
+          }
+        ]
       }
     ]
   },
